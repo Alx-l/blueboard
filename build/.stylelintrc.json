@@ -1,0 +1,27 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-idiomatic-order"
+  ],
+  "ignoreFiles": [
+    "../src/styles/base/*.scss"
+  ],
+  "plugins": [
+    "stylelint-order"
+  ],
+  "rules": {
+    "at-rule-no-unknown": [
+      true, { "ignoreAtRules": ["include", "mixin", "if", "for", "else"] }
+    ],
+    "property-no-unknown": [
+      true, { "ignoreProperties": ["sym-grid", "asym-grid", "center", "push", "pull"] }
+    ],
+    "selector-type-no-unknown": [
+      true, { "ignoreTypes": ["/^component$/"] }
+    ],
+    "selector-pseudo-class-no-unknown": [
+      true,
+      { "ignorePseudoClasses": ["global", "local"] }
+    ]
+  }
+}

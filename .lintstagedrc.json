@@ -1,0 +1,12 @@
+{
+  "src/**/*.{ts,tsx}": [
+    "tslint --fix --config build/tslint.json --project tsconfig.json --format stylish",
+    "git add",
+    "prettier --config .prettierrc.json --write",
+    "git add"
+  ],
+  "src/**/*.scss": [
+    "stylelint \"src/**/*.scss\" --config build/.stylelintrc.json --fix",
+    "git add"
+  ]
+}
