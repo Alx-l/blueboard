@@ -1,5 +1,9 @@
 # Poi Starter Kit
 
+## Live Demo:
+
+[demo](https://poi-playground-tqoaqqqkzv.now.sh/)
+
 ## Usage:
 
 - Clone the repo
