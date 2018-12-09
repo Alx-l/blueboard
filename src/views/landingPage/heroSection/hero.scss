@@ -1,0 +1,41 @@
+@import '~styles/index';
+
+.hero {
+  background-image: url('/static/background-header.png');
+  background-position: center center;
+  background-size: cover;
+
+  .content {
+    max-width: 750px;
+    text-align: center;
+  }
+
+  .label {
+    @include font-xl;
+
+    margin-bottom: $spacing-xxl;
+    color: $clr-header;
+
+    &::first-letter {
+      text-transform: capitalize;
+    }
+  }
+
+  .icon {
+    display: block;
+    margin: 0 auto $spacing-xl;
+    cursor: pointer;
+  }
+
+  .button {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .subText {
+    @include font-sm;
+
+    color: $clr-light-text;
+    text-shadow: #dee4ec 1px 1px;
+  }
+}

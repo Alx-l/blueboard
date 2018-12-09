@@ -1,0 +1,110 @@
+$defaultDuration: 350;
+$defaultEasing: "ease-in-out";
+
+@mixin slideLeft($duration: $defaultDuration, $easing: $defaultEasing, $delay: 0) {
+  animation: slideLeft #{$duration}ms #{$easing} #{$delay}ms forwards;
+
+  @keyframes slideLeft {
+    from {
+      opacity: 0;
+      transform: translate3d(-40%, 0, 0);
+    }
+
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}
+
+@mixin slideRight($duration: $defaultDuration, $easing: $defaultEasing, $delay: 0) {
+  animation: slideRight #{$duration}ms #{$easing} #{$delay}ms forwards;
+
+  @keyframes slideRight {
+    from {
+      opacity: 0;
+      transform: translate3d(40%, 0, 0);
+    }
+
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}
+
+@mixin slideTop($duration: $defaultDuration, $easing: $defaultEasing, $delay: 0) {
+  animation: slideTop #{$duration}ms #{$easing} #{$delay}ms forwards;
+
+  @keyframes slideTop {
+    from {
+      opacity: 0;
+      transform: translate3d(0, -40%, 0);
+    }
+
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}
+
+@mixin slideBottom($duration: $defaultDuration, $easing: $defaultEasing, $delay: 0) {
+  animation: slideBottom #{$duration}ms #{$easing} #{$delay}ms forwards;
+
+  @keyframes slideBottom {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 40%, 0);
+    }
+
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}
+
+@mixin exitUp($duration: $defaultDuration, $easing: $defaultEasing, $delay: 0) {
+  animation: exitUp #{$duration}ms #{$easing} #{$delay}ms forwards;
+
+  @keyframes exitUp {
+    from {
+      opacity: 1;
+      transform: translate3d(0, 0%, 0);
+    }
+
+    to {
+      opacity: 0;
+      transform: translate3d(0, -40%, 0);
+    }
+  }
+}
+
+@mixin fadeIn($duration: $defaultDuration, $easing: $defaultEasing, $delay: 0) {
+  animation: fadeIn #{$duration}ms #{$easing} #{$delay}ms forwards;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+@mixin fadeOut($duration: $defaultDuration, $easing: $defaultEasing, $delay: 0) {
+  animation: fadeOut #{$duration}ms #{$easing} #{$delay}ms forwards;
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+    }
+  }
+}

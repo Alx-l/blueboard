@@ -1,0 +1,70 @@
+@import '~styles/index';
+
+.root {
+  @include flexContainer;
+
+  min-height: 100vh;
+  padding: $spacing-lg $spacing;
+  background-color: #f6f5f3;
+  text-align: center;
+}
+
+.children {
+  position: relative;
+  max-width: 1130px;
+  align-self: center;
+  padding-top: 200px;
+  margin: 0 auto;
+
+  @include media('>tablet') {
+    padding-top: 0;
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: 0;
+    width: 200px;
+    height: 200px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+
+    @include media('>tablet') {
+      top: -100px;
+    }
+  }
+
+  &::before {
+    left: 0;
+    background-image: url('/static/penholder.png');
+  }
+
+  &::after {
+    right: 0;
+    background-image: url('/static/earphones.png');
+  }
+}
+
+.title {
+  margin-bottom: $spacing-xl * 2;
+}
+
+.featuresContainer {
+  @include flexContainer;
+
+  & > * {
+    &:not(:last-of-type) {
+      margin-bottom: $spacing;
+    }
+
+    @include media('>mobile') {
+      sym-grid: 2 $spacing-sm;
+    }
+
+    @include media('>tablet') {
+      sym-grid: 3 $spacing;
+    }
+  }
+}

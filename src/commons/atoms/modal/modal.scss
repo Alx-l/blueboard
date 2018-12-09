@@ -1,0 +1,44 @@
+@import '~styles/index';
+
+.root {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(10, 10, 10, 0.86);
+}
+
+.children {
+  @include slideTop($easing: "ease-in-out");
+
+  position: relative;
+  min-width: 300px;
+  max-width: 1024px;
+  padding: $spacing-md $spacing;
+  background-color: #fff;
+  border-radius: 6px;
+}
+
+.icon {
+  position: absolute;
+  top: -22px;
+  right: -28px;
+  cursor: pointer;
+}
+
+.fadeIn {
+  @include fadeIn($easing: "ease-in-out", $duration: 250);
+}
+
+.fadeOut {
+  @include fadeOut($easing: "ease-in-out", $duration: 250);
+}
+
+.exitUp {
+  @include exitUp($easing: "ease-in-out");
+}

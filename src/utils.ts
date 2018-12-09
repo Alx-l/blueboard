@@ -1,0 +1,51 @@
+interface ThrottleParams {
+  leading?: boolean
+  trailing?: boolean
+}
+
+export function throttle(
+  func: Function,
+  wait: number,
+  options: ThrottleParams = { leading: true, trailing: true }
+): () => void {
+  const context = null
+  // handle case when an empty object is passed
+  if (!Object.keys(options).length) {
+    options = {
+      leading: true,
+      trailing: true
+    }
+  }
+
+  let args: IArguments | null
+  let result: any
+  let timeout: any = null
+  let previous = 0
+
+  const later = function() {
+    previous = options.leading === false ? 0 : Date.now()
+    timeout = null
+    result = func.apply(context, args)
+    if (!timeout) args = null
+  }
+
+  return function() {
+    const now = Date.now()
+    if (!previous && options.leading === false) previous = now
+    const remaining = wait - (now - previous)
+    args = arguments
+    if (remaining <= 0 || remaining > wait) {
+      if (timeout) {
+        clearTimeout(timeout)
+        timeout = null
+      }
+      previous = now
+      result = func.apply(context, args)
+      if (!timeout) args = null
+    } else if (!timeout && options.trailing !== false) {
+      timeout = setTimeout(later, remaining)
+    }
+
+    return result
+  }
+}

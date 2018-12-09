@@ -1,0 +1,21 @@
+@import '~styles/index';
+
+.root {
+  display: block;
+}
+
+.icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto $spacing;
+}
+
+.title {
+  @include font-md;
+
+  margin-bottom: $spacing-xs;
+
+  &::first-letter {
+    text-transform: capitalize;
+  }
+}

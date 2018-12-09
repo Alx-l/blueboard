@@ -1,41 +1,11 @@
-@import '~modularscale-sass/stylesheets/modularscale';
-@import '../abstracts/breakpoints';
-
-$modularscale: (
-  base: 16px,
-  ratio: $major-third
-);
-
-/* Headers
-   ========================================================================== */
-
-@for $i from 1 through 6 {
-  h#{$i} {
-    font-size: ms(6 - $i, $base: 10px);
-    line-height: $minor-second;
-
-    @include media('>mobile') {
-      font-size: ms(6 - $i, $base: 13px);
-    }
-
-    @include media('>tablet') {
-      font-size: ms(6 - $i);
-    }
-  }
-}
-
-/* Body text
-   ========================================================================== */
+@import '../abstracts/index.scss';
 
 body {
-  font-size: ms(0, $base: 14px);
   line-height: 1.5;
+}
 
-  @include media('>mobile') {
-    font-size: ms(0);
-  }
+p {
+  @include font-default;
 
-  @include media('>tablet') {
-    font-size: ms(1);
-  }
+  color: $clr-text;
 }

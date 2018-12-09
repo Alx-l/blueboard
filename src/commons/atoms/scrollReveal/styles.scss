@@ -1,0 +1,23 @@
+@import '~styles/abstracts/index';
+
+$timeout: 350;
+
+.root {
+  opacity: 0;
+}
+
+.left {
+  @include slideLeft($timeout, $delay: $timeout);
+}
+
+.right {
+  @include slideRight($timeout, $delay: $timeout);
+}
+
+.top {
+  @include slideTop($timeout, $delay: $timeout);
+}
+
+.bottom {
+  @include slideBottom($timeout, $delay: $timeout);
+}

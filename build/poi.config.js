@@ -3,7 +3,7 @@ const styleLint = require('stylelint-webpack-plugin')
 
 // make the API_PORT constant available inside this file
 require('dotenv').config({ path: computePath('../.env') })
-const { NODE_ENV, API_PORT } = process.env
+const { NODE_ENV, API_PORT, TITLE } = process.env
 
 module.exports = options => ({
   entry: [computePath('../src/app.tsx')],
@@ -15,6 +15,9 @@ module.exports = options => ({
       }
     })
   ],
+  html: {
+    title: TITLE
+  },
   css: {
     modules: true
   },

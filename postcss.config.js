@@ -22,7 +22,7 @@ module.exports = ({ file, options, env }) => ({
     ['postcss-pxtorem']: {
       rootValue: 16,
       unitPrecision: 5,
-      propWhiteList: [],
+      propWhiteList: ['*', '!letter-spacing', '!text-shadow', '!border-radius'],
       replace: true,
       mediaQuery: false,
       minPixelValue: 0

@@ -10,7 +10,7 @@ import { render } from 'react-dom'
 import 'space-lift/es/all'
 
 import { Main } from 'commons/layouts'
-import { LandingPage } from 'views/landingPage'
+import { LandingPage } from 'views'
 
 const App = (
   <Main>

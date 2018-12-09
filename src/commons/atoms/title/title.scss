@@ -1,0 +1,37 @@
+@import '~styles/index';
+
+.root {
+  display: block;
+}
+
+.label {
+  @include font-default;
+
+  margin-bottom: $spacing-sm;
+  color: $clr-primary;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.description {
+  @include font-lg;
+
+  &::first-letter {
+    text-transform: capitalize;
+  }
+
+  color: $clr-header;
+}
+
+.ellipsis {
+  padding-left: $spacing-sm;
+  color: $clr-primary;
+  letter-spacing: 4px;
+}
+
+.isColorInverted {
+  .description,
+  .ellipsis {
+    color: #fff;
+  }
+}

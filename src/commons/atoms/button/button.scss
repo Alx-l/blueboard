@@ -1,0 +1,16 @@
+@import '~styles/index';
+
+.root {
+  @include font-default;
+
+  display: inline-block;
+  max-width: 300px;
+  padding: $spacing $spacing-xl;
+  background-color: $clr-primary;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  letter-spacing: 2px;
+  line-height: 1;
+  text-transform: uppercase;
+}

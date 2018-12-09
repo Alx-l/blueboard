@@ -1,0 +1,69 @@
+@import '~styles/index';
+
+.root {
+  padding: 94px $spacing $spacing-lg;
+  background-color: $clr-secondary;
+  color: #fff;
+  text-align: center;
+}
+
+.children {
+  max-width: 1140px;
+  margin: auto;
+}
+
+.title {
+  margin-bottom: $spacing-xl * 2;
+}
+
+.form {
+  @include flexContainer;
+
+  margin-bottom: $spacing-sm;
+
+  button {
+    align-self: flex-start;
+    margin-right: auto !important;
+    margin-left: auto;
+  }
+
+  > * {
+    input {
+      width: 100%;
+    }
+
+    @include media('>mobile') {
+      sym-grid: 2 $spacing-sm;
+    }
+
+    @include media('>tablet') {
+      sym-grid: 3 $spacing;
+    }
+
+    @include media('>desktop') {
+      sym-grid: 4 $spacing-md;
+    }
+  }
+}
+
+.submitButton {
+  max-width: initial;
+  border: 1px solid transparent;
+}
+
+.info {
+  @include font-sm;
+
+  color: $clr-light-text;
+}
+
+.modal {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.emoji {
+  padding-right: $spacing-sm;
+  font-size: 60px;
+}

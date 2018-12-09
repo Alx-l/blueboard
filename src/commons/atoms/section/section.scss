@@ -1,0 +1,66 @@
+@import '~styles/index';
+
+.root {
+  @include flexContainer;
+
+  min-height: 100vh;
+
+  p {
+    &:not(:only-of-type) {
+      margin-bottom: $spacing-md;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.title {
+  margin-bottom: $spacing-xl;
+}
+
+.content {
+  align-self: center;
+  padding: $spacing;
+
+  @include media('>mobile') {
+    asym-grid: 6/12 0;
+  }
+
+  @include media('>tablet') {
+    asym-grid: 8/12 0;
+  }
+
+  .children {
+    max-width: 550px;
+    margin: auto;
+  }
+}
+
+.background {
+  position: relative;
+  overflow: hidden;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  @include media('>mobile') {
+    asym-grid: 6/12 0 last;
+  }
+
+  @include media('>tablet') {
+    asym-grid: 4/12 0 last;
+  }
+}
+
+.shape {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 25vw;
+  opacity: 0.8;
+
+  &.isInverted {
+    transform: scale(-1, 1);
+  }
+}

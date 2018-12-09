@@ -1,0 +1,40 @@
+@import '~styles/index';
+
+.root {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 26px; // height of the error message
+
+  ::-webkit-input-placeholder {
+    color: #fff;
+    text-transform: uppercase;
+  }
+
+  ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #fff;
+    text-transform: uppercase;
+  }
+
+  :-ms-input-placeholder {
+    /* IE 10+ */
+    color: #fff;
+    text-transform: uppercase;
+  }
+
+  :-moz-placeholder {
+    /* Firefox 18- */
+    color: #fff;
+    text-transform: uppercase;
+  }
+}
+
+.input {
+  @include font-default;
+
+  padding: $spacing $spacing-md;
+  border: 1px solid hsla(0, 0, 100, 0.3);
+  background-color: hsla(40, 1, 96, 0.2);
+  border-radius: 3px;
+  color: #fff;
+}
