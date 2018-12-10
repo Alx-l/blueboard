@@ -2,7 +2,7 @@
 
 ## Live Demo:
 
-[demo](https://dist-uhfqeupwjz.now.sh/)
+[demo](https://dist-cokjfxifyp.now.sh)
 
 ## Usage:
 
