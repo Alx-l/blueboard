@@ -5,28 +5,7 @@
   display: inline-block;
   margin-bottom: 26px; // height of the error message
 
-  ::-webkit-input-placeholder {
-    color: #fff;
-    text-transform: uppercase;
-  }
-
-  ::-moz-placeholder {
-    /* Firefox 19+ */
-    color: #fff;
-    text-transform: uppercase;
-  }
-
-  :-ms-input-placeholder {
-    /* IE 10+ */
-    color: #fff;
-    text-transform: uppercase;
-  }
-
-  :-moz-placeholder {
-    /* Firefox 18- */
-    color: #fff;
-    text-transform: uppercase;
-  }
+  @include placeHolder($uppercase: true);
 }
 
 .input {

@@ -1,5 +1,5 @@
 $defaultDuration: 350;
-$defaultEasing: "ease-in-out";
+$defaultEasing: 'ease-in-out';
 
 @mixin slideLeft($duration: $defaultDuration, $easing: $defaultEasing, $delay: 0) {
   animation: slideLeft #{$duration}ms #{$easing} #{$delay}ms forwards;
@@ -61,6 +61,22 @@ $defaultEasing: "ease-in-out";
     to {
       opacity: 1;
       transform: translate3d(0, 0, 0);
+    }
+  }
+}
+
+@mixin slideDown($duration: $defaultDuration, $easing: $defaultEasing, $delay: 0) {
+  animation: slideDown #{$duration}ms #{$easing} #{$delay}ms forwards;
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20%);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 }

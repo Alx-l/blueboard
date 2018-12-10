@@ -9,7 +9,7 @@ type Item = {
   node: HTMLElement
   id?: string
   slideFrom: Direction
-  shouldReplayAnimation: boolean
+  replayAnimation: boolean
 }
 
 type Store = {
@@ -39,7 +39,7 @@ export class ScrollStore extends Container<Store> {
 
   handleScroll = async () => {
     const { items } = this.state
-    items.forEach(async ({ node, slideFrom, shouldReplayAnimation = true }) => {
+    items.forEach(async ({ node, slideFrom, replayAnimation }) => {
       const documentHeight = document.body.offsetHeight
       const { top, bottom } = node.getBoundingClientRect()
       const isIntoView = documentHeight - top > 0 && bottom > 0
@@ -47,7 +47,7 @@ export class ScrollStore extends Container<Store> {
       if (isIntoView) {
         node.classList.add(styles[slideFrom])
       } else {
-        if (shouldReplayAnimation) node.classList.remove(styles[slideFrom])
+        if (replayAnimation) node.classList.remove(styles[slideFrom])
       }
 
       await this.setState({ isTicking: false })

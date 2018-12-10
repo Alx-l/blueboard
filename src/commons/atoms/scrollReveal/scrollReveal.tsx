@@ -7,7 +7,7 @@ import { ScrollStore, scrollStore as _scrollStore, Direction } from './store'
 
 type Props = {
   slideFrom: Direction
-  shouldReplayAnimation?: boolean
+  replayAnimation?: boolean
   children?: React.ReactNode
 }
 
@@ -18,14 +18,14 @@ class ScrollComponent extends React.PureComponent<
   root = React.createRef<HTMLDivElement>()
 
   componentDidMount() {
-    const { scrollStore, slideFrom, shouldReplayAnimation = true } = this.props
+    const { scrollStore, slideFrom, replayAnimation = true } = this.props
     const { root } = this
 
     if (root.current) {
       scrollStore.addItem({
         node: root.current,
         slideFrom,
-        shouldReplayAnimation
+        replayAnimation
       })
     }
   }

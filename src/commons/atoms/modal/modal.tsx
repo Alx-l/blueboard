@@ -9,53 +9,40 @@ import { Close } from 'commons/svg'
 import { CSSAnimate } from 'commons/atoms/animate'
 
 type Props = {
-  shouldShowModal: boolean
+  showModal: boolean
   onClose: () => void
 }
 
-type State = {
-  showModal: boolean
-}
-
-export class Modal extends React.Component<Props, State> {
+export class Modal extends React.Component<Props> {
   modalRoot = document.getElementById('modal')
-  el = document.createElement('div')
-  state: Readonly<State> = {
-    showModal: false
+
+  handleClick = () => this.props.onClose()
+
+  handleKeyDown = (e: React.KeyboardEvent) => {
+    const keycode = e.which || e.keyCode
+    if (keycode === 13) this.props.onClose()
   }
 
-  componentDidMount() {
-    if (this.modalRoot) {
-      this.modalRoot.appendChild(this.el)
+  handleScrolling = (action: 'prevent' | 'allow') => {
+    const html = document.documentElement
+    const body = document.body
+    const { top } = body.getBoundingClientRect()
+
+    if (action === 'allow') {
+      html.classList.remove(styles.noScroll)
+      body.classList.remove(styles.noScroll)
+      window.scroll(0, top * -1)
+    } else {
+      html.classList.add(styles.noScroll)
+      body.classList.add(styles.noScroll)
+      html.style.top = `${top}px`
     }
-  }
-
-  componentWillUnmount() {
-    if (this.modalRoot) {
-      this.modalRoot.removeChild(this.el)
-    }
-  }
-
-  componentDidUpdate(prevProps: Props) {
-    const { props, state } = this
-    const propsHaveChanged = prevProps.shouldShowModal !== props.shouldShowModal
-    if (propsHaveChanged && props.shouldShowModal && !state.showModal) {
-      this.setState({ showModal: true })
-    }
-  }
-
-  handleClose = () => {
-    this.setState({ showModal: false })
-    this.props.onClose()
   }
 
   render() {
-    const { children } = this.props
-    const { showModal } = this.state
+    const { children, showModal } = this.props
 
-    showModal
-      ? (document.documentElement.style.overflow = 'hidden')
-      : (document.documentElement.style.overflow = 'initial')
+    this.handleScrolling(showModal ? 'prevent' : 'allow')
 
     return (
       <CSSAnimate
@@ -69,7 +56,9 @@ export class Modal extends React.Component<Props, State> {
           <div className={styles.root}>
             <div className={classnames(styles.children, !showModal && styles.exitUp)}>
               <Icon
-                onclick={this.handleClose}
+                tabIndex={1}
+                onKeyDown={this.handleKeyDown}
+                onClick={this.handleClick}
                 className={styles.icon}
                 svg={Close('#ff6d6d')}
                 size={40}
@@ -77,7 +66,7 @@ export class Modal extends React.Component<Props, State> {
               {children}
             </div>
           </div>,
-          this.el
+          this.modalRoot as HTMLElement
         )}
       </CSSAnimate>
     )

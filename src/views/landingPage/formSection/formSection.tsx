@@ -65,7 +65,7 @@ export class FormSection extends React.PureComponent<{}, State> {
 
               return (
                 <ScrollReveal slideFrom="left">
-                  <Modal onClose={this.onClose} shouldShowModal={this.state.showModal}>
+                  <Modal onClose={this.onClose} showModal={this.state.showModal}>
                     <div className={styles.modal}>
                       <span className={styles.emoji}>🤾</span> in your face
                     </div>

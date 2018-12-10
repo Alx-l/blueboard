@@ -1,0 +1,68 @@
+@import '~modularscale-sass/stylesheets/modularscale';
+
+$modularscale: (
+  base: 16px,
+  ratio: $major-third
+);
+
+@mixin font-default {
+  font-size: ms(0, $base: 13px);
+
+  @include media('>mobile') {
+    font-size: ms(0, $base: 14px);
+  }
+
+  @include media('>tablet') {
+    font-size: ms(0);
+  }
+}
+
+@mixin font-sm {
+  font-size: ms(0, $base: 12px);
+
+  @include media('>mobile') {
+    font-size: ms(0, $base: 13px);
+  }
+
+  @include media('>tablet') {
+    font-size: ms(0, $base: 14px);
+  }
+}
+
+@mixin font-md {
+  font-size: ms(0);
+
+  @include media('>mobile') {
+    font-size: ms(1);
+  }
+
+  @include media('>tablet') {
+    font-size: ms(2);
+  }
+}
+
+@mixin font-lg {
+  font-size: ms(2);
+  line-height: $minor-second;
+
+  @include media('>mobile') {
+    font-size: ms(3);
+  }
+
+  @include media('>tablet') {
+    font-size: ms(4);
+  }
+}
+
+@mixin font-xl {
+  font-size: ms(4);
+  line-height: $minor-second;
+
+  @include media('>mobile') {
+    font-size: ms(5);
+  }
+
+  @include media('>tablet') {
+    font-size: ms(6);
+  }
+}
