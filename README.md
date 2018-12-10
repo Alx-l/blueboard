@@ -2,7 +2,7 @@
 
 ## Live Demo:
 
-[demo](https://poi-playground-tqoaqqqkzv.now.sh/)
+[demo](https://dist-uhfqeupwjz.now.sh/)
 
 ## Usage:
 

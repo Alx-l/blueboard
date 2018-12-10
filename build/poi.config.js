@@ -1,5 +1,6 @@
 const computePath = require('./utils').computePath
 const styleLint = require('stylelint-webpack-plugin')
+const copyWebpack = require('copy-webpack-plugin')
 
 // make the API_PORT constant available inside this file
 require('dotenv').config({ path: computePath('../.env') })
@@ -27,7 +28,7 @@ module.exports = options => ({
     },
     proxy: {
       '/api': {
-        target: `http://localhost:${ API_PORT }`,
+        target: `http://localhost:${API_PORT}`,
         changeOrigin: true
       }
     }
@@ -49,7 +50,17 @@ module.exports = options => ({
       configFile: computePath('./.stylelintrc.json')
     })
 
-    config.plugins = config.plugins.concat(styleLintPlugin)
+    const copyWebpackPlugin = new copyWebpack([
+      {
+        from: computePath('../static'),
+        to: computePath('../dist/static')
+      }
+    ])
+
+    config.plugins =
+      context.command === 'build'
+        ? config.plugins.concat(styleLintPlugin, copyWebpackPlugin)
+        : config.plugins.concat(styleLintPlugin)
 
     return config
   }
