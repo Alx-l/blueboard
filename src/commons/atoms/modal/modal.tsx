@@ -1,4 +1,5 @@
 import * as styles from './modal.scss'
+const timeout = parseInt(styles.timeout, 10)
 
 import * as React from 'react'
 import { createPortal } from 'react-dom'
@@ -49,7 +50,7 @@ export class Modal extends React.Component<Props> {
         onEnterClassName={() => styles.fadeIn}
         onExitClassName={() => styles.fadeOut}
         appear={true}
-        timeout={250}
+        timeout={timeout}
         toggle={showModal}
       >
         {createPortal(

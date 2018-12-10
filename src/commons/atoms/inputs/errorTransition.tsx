@@ -1,10 +1,9 @@
 import * as styles from './errorTransition.scss'
+const timeout = parseInt(styles.timeout, 10)
 
 import * as React from 'react'
 
 import { CSSAnimate } from 'commons/atoms/animate'
-
-const timeout = 250
 
 type Props = {
   toggle: boolean

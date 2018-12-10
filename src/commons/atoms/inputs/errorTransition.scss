@@ -1,5 +1,14 @@
 @import '~styles/index';
 
+$timeout: 250;
+/* stylelint-disable */
+
+// exported abstracts we can use in our view
+:export {
+  timeout: $timeout;
+}
+/* stylelint-enable */
+
 .root {
   position: absolute;
   top: calc(100% + 2px);
@@ -8,5 +17,5 @@
 }
 
 .slideDown {
-  @include slideDown($duration: 250);
+  @include slideDown($duration: $timeout);
 }

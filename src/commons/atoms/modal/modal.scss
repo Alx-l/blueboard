@@ -1,5 +1,14 @@
 @import '~styles/index';
 
+$timeout: 250;
+/* stylelint-disable */
+
+// exported abstracts we can use in our view
+:export {
+  timeout: $timeout;
+}
+/* stylelint-enable */
+
 .root {
   position: fixed;
   top: 0;
@@ -42,11 +51,11 @@
 }
 
 .fadeIn {
-  @include fadeIn($easing: "ease-in-out", $duration: 250);
+  @include fadeIn($easing: "ease-in-out", $duration: $timeout);
 }
 
 .fadeOut {
-  @include fadeOut($easing: "ease-in-out", $duration: 250);
+  @include fadeOut($easing: "ease-in-out", $duration: $timeout);
 }
 
 .exitUp {

@@ -1,4 +1,4 @@
-import * as styles from './styles.scss'
+import * as styles from './scrollReveal.scss'
 
 import { Container } from 'unstated'
 import lift, { update } from 'space-lift'

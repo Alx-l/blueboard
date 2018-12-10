@@ -2,9 +2,9 @@ const computePath = require('./utils').computePath
 const styleLint = require('stylelint-webpack-plugin')
 const copyWebpack = require('copy-webpack-plugin')
 
-// make the API_PORT constant available inside this file
+// make the ENV variables available inside this file
 require('dotenv').config({ path: computePath('../.env') })
-const { NODE_ENV, API_PORT, TITLE } = process.env
+const { API_PORT, TITLE } = process.env
 
 module.exports = options => ({
   entry: [computePath('../src/app.tsx')],

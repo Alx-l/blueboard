@@ -1,4 +1,4 @@
-import * as styles from './styles.scss'
+import * as styles from './scrollReveal.scss'
 
 import * as React from 'react'
 import { Provider, Subscribe } from 'unstated'
