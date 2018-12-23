@@ -2,7 +2,7 @@
 
 ## Live Demo:
 
-[demo](https://dist-cokjfxifyp.now.sh)
+[demo](https://blueboard-landingpage.now.sh/)
 
 ## Usage:
 
