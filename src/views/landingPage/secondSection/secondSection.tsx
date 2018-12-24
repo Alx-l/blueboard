@@ -2,6 +2,8 @@ import * as React from 'react'
 
 import { Section } from 'commons/atoms/section'
 
+console.log('test')
+
 export const SecondSection = () => (
   <div>
     <Section
