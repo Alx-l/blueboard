@@ -2,7 +2,7 @@
 
 ## Live Demo:
 
-[demo](https://blueboard-landingpage.now.sh/)
+[demo](https://blueboard.netlify.com/)
 
 ## Usage:
 

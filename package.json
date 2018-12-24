@@ -9,9 +9,7 @@
     "lint": "tslint --config build/tslint.json --project tsconfig.json --format stylish --fix --force",
     "stylelint": "stylelint \"src/**/*.scss\" --config build/.stylelintrc.json --fix",
     "lint-staged": "lint-staged --config .lintstagedrc.json",
-    "prettier": "prettier --config .prettierrc.json --write \"src/**/*.{ts,tsx}\"",
-    "deploy": "now",
-    "now-build": "npm run build"
+    "prettier": "prettier --config .prettierrc.json --write \"src/**/*.{ts,tsx}\""
   },
   "husky": {
     "hooks": {
@@ -39,7 +37,6 @@
     "lint-staged": "8.1.0",
     "modularscale-sass": "3.0.8",
     "node-sass": "4.10.0",
-    "now": "12.1.14",
     "object-assign": "4.1.1",
     "poi": "10.2.11",
     "postcss-bubbly-grid": "1.0.5",
